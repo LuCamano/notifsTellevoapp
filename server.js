@@ -9,7 +9,7 @@ admin.initializeApp({
 });
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 app.post("/sendPushNotification", async (req, res) => {
