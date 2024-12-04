@@ -17,10 +17,10 @@ app.post("/sendPushNotification", async (req, res) => {
 
   try {
     const response = await admin.messaging().sendEachForMulticast(newMessage);
-    res.status(200).send("Notificación enviada correctamente");
+    res.status(200).json({ message: "Notificación enviada correctamente" });
   } catch (error) {
     console.error("Error al enviar la notificación:", error);
-    res.status(500).send("Error al enviar la notificación");
+    res.status(500).json({ message:"Error al enviar la notificación" });
   }
 });
 
