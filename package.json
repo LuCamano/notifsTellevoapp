@@ -1,0 +1,17 @@
+{
+  "name": "notifstellevoapp",
+  "version": "1.0.0",
+  "description": "Servidor para enviar notificaciones a la aplicacion TeLlevoApp",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Luciano Camaño",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "firebase-admin": "^13.0.1"
+  }
+}
