@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const admin = require("firebase-admin");
+const cors = require('cors');
 const serviceAccount = require("./serviceAccount.json"); // Reemplaza con la ruta a tu archivo JSON de la cuenta de servicio
 
 admin.initializeApp({
@@ -9,6 +10,7 @@ admin.initializeApp({
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/sendPushNotification", async (req, res) => {
   const newMessage = req.body;
