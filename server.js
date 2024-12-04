@@ -11,17 +11,10 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post("/sendPushNotification", async (req, res) => {
-  const { title, message, tokens } = req.body;
-
-  const payload = {
-    notification: {
-        title: title,
-        body: message,
-    },
-  };
+  const newMessage = req.body;
 
   try {
-    const response = await admin.messaging().sendToDevice(tokens, payload);
+    const response = await admin.messaging().sendEachForMulticast(newMessage);
     res.status(200).send("Notificación enviada correctamente");
   } catch (error) {
     console.error("Error al enviar la notificación:", error);
